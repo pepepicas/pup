@@ -2,7 +2,7 @@
 const puppeteer = require('puppeteer');
 
 async function getPic() {
-  const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox']});
+  const browser = await puppeteer.launch({ args: ['--no-sandbox']});
   const page = await browser.newPage();
   await page.goto('http://raboninco.com/HTC8');
   await page.waitFor(12000)
