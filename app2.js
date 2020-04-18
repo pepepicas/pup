@@ -9,7 +9,7 @@ let links = fs.readFileSync("links.txt", "utf-8");
 links = links.split(/\s+/);
 
 async function view() {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({args: ['--no-sandbox']});
 
   for (let i = 0; i < links.length; i++) {
     const page = await browser.newPage();
